@@ -62,11 +62,14 @@
         let box = document.querySelector(".sigma-box")
         
 
-        document.addEventListener("mousemove", (e) => {
+        document.addEventListener("mousemove", (e) => move(e))
+        document.addEventListener("touchmove", (e) => move(e))
+       
+        function move(event) {
             let dY, dX
             const w = document.body.clientWidth, h = document.body.clientHeight
-            const cX = (e || event).clientX || (e || event).touches[0].clientX
-            const cY = (e || event).clientY || (e || event).touches[0].clientY
+            const cX = event.clientX || event.touches[0].clientX
+            const cY = event.clientY || event.touches[0].clientY
             
             if(cX > w/2) dX = cX - w/2
             else dX = -(w/2 - cX)
