@@ -1,0 +1,52 @@
+
+@font-face{
+	font-family:ms;
+	src:url(../fonts/montsat.otf);
+}
+@font-face{
+	font-family:cg;
+	src:url(../fonts/centgot.ttf);
+}
+
+@media screen and (max-width :768px){
+	#home .logo h1{
+		font-size:2rem;
+	}
+	
+	#home .logo h1 span{
+		width:22px;
+	}
+	#home .ctn .ke22 h2{
+		font-size:1.5rem;
+	}
+	#home .ctn .ke22 h1{
+		font-size:3.5rem;
+	}
+	
+	.progres,
+	.pgsrbox,
+	.fieldsBox
+	{
+		grid-template-columns:repeat(1, 1fr);
+	}
+	.pgsrbox .seat{
+		margin: 15px 0;
+	}
+	.map{
+		grid-column:1;
+		grid-row:2;
+	}
+	.mapid .close{
+		cursor:default;
+	}
+	.mdlseat{
+		min-width:100%;
+	}
+	.mdlbody .swop{
+		display:block;
+	}
+	#post-res .form .send,
+	#post-res .form button{
+		width:100%;
+	}
+}

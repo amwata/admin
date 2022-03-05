@@ -1,0 +1,36 @@
+.loader{
+	position:fixed;
+	width:100vw;
+	height:100vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	background:#fff;
+	z-index:1000;
+}
+
+.loader .loadctn{
+	position:relative;
+	width:4rem;
+}
+.loader .loadctn svg{
+	position:relative;
+	width:100%;
+	display:block;
+}
+
+.loader .loadctn svg g{
+	animation: dim 2s linear;
+}
+	
+@keyframes dim{
+	0%{
+		fill:#eee;
+	}
+	50%{
+		fill:#ccc;
+	}
+	100%{
+		fill:#27abab;
+	}
+}
