@@ -159,6 +159,8 @@ body{
 		outline:none;
 		color:#def;
 		appearance:none;
+		-moz-appearance: none;
+		-webkit-appearance: none;
 	}
 	.selectctn .selectarrows{
 		position:absolute;
@@ -167,6 +169,7 @@ body{
 		height:100%;
 		top:0;
 		pointer-events:none;
+		background:#4d5061;
 		right:0;
 		--wd:5px;
 	}
