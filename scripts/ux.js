@@ -30,8 +30,8 @@ const UX = function () {
 	this.frmRelCtn = document.querySelector("#frmRelCtn")
 	this.frmCounty= document.querySelector("#crudCounty")
 	this.areaCtn = document.querySelector(".areactn")
-	this.aspPg = "manage-aspirants.html"
-	this.relPg = "manage-results.html"
+	this.aspPg = "manage-aspirants/"
+	this.relPg = "manage-results/"
 	this.subs = 0
 	
 }
