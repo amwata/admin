@@ -96,7 +96,7 @@ body{
 		font-weight:bold;
 		background:hsl(222, 5%, 70%);
 	}
-	.box .items table tbody tr:nth-child(odd){
+	.box .items table tbody tr:nth-child(even){
 		background:#eee;
 	}
 	
