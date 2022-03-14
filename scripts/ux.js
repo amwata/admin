@@ -407,9 +407,7 @@ UX.prototype.relReset = function(){
 		
 	}).catch(er => {
 		console.log(er)
-		setTimeout(()=>{
-			this.relReset()
-		}, 30000)
+		this.relReset()
 	})
 }
 
