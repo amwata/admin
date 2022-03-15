@@ -426,6 +426,7 @@ UX.prototype.relFrms = function(x){
 				send = document.createElement("div"),
 				btnP = document.createElement("button")
 			frm.setAttribute("class", "form")
+			frm.autocomplete = "off"
 			fbx.setAttribute("class", "fieldsBox")
 			send.setAttribute("class", "send")
 			frm.innerHTML = `<h2> Presidential - ${pArea.length > 0 ? pArea[0][5] : x.toUpperCase()}</h2>`
@@ -465,6 +466,7 @@ UX.prototype.relFrms = function(x){
 						send.setAttribute("class", "send")
 						frm.setAttribute("class", "form")
 						fbx.setAttribute("class", "fieldsBox")
+						frm.autocomplete = "off"
 						frm.innerHTML = `<h2>${k} - ${gsMatch[0][5]}</h2>`
 					
 					for(let i = 0; i<gsMatch.length; i++){
