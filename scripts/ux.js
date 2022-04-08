@@ -357,7 +357,7 @@ UX.prototype.frmRelInit = function(){
 	
 	this.frmInit.addEventListener("submit", ev => {
 		ev.preventDefault()
-		
+		this.frmInit.classList.remove("flickr")
 		let data = new FormData(ev.target)
 		this.auth.textContent = "Processing..."
 		fetch(this.relUrl, {method: "POST", body: data})
@@ -376,7 +376,6 @@ UX.prototype.frmRelInit = function(){
 			this.ls.setItem("relSigma", JSON.stringify(e))
 			this.relFrms(this.selectCnty.value)
 		}).catch(er => {
-			this.frmInit.classList.remove("flickr")
 			this.auth.textContent = "Try Again!"
 			this.initMsg.innerHTML = `<div class="err">${er}</div>`
 			this.frmInit.classList.add("flickr")
