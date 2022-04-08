@@ -43,12 +43,16 @@ UX.prototype.init = function(){
 		this.refresh()
 		return
 	}
+	this.crudAuthr()
+}
+
+UX.prototype.crudAuthr = function(){
 	this.frmInit.addEventListener("submit", ev => {
 		ev.preventDefault()
-		
+		this.frmInit.classList.remove("flickr")
 		let data = new FormData(ev.target)
 		this.auth.textContent = "Processing..."
-		fetch(this.crudUrl, {method: "POST", body: data})
+		fetch(this.relUrl, {method: "POST", body: data})
 		.then(res => {
 			if(!res.ok){
 				throw new Error(`HTTP Error! status: ${res.status}`)
@@ -60,13 +64,13 @@ UX.prototype.init = function(){
 				return
 			}
 			this.initDiv.style.display = "none"
-			this.ls.setItem("pwrd", frmInit["pass"].value)
-			this.ls.setItem("crudSigma", JSON.stringify(e))
-			this.loadTable(this.selectPost.value, this.selectCnty.value)
-			
+			this.ls.setItem("relPwrd", frmInit["pass"].value)
+			this.ls.setItem("relSigma", JSON.stringify(e))
+			this.relFrms(this.selectCnty.value)
 		}).catch(er => {
 			this.auth.textContent = "Try Again!"
 			this.initMsg.innerHTML = `<div class="err">${er}</div>`
+			this.frmInit.classList.add("flickr")
 		})
 	})
 }
@@ -354,33 +358,7 @@ UX.prototype.frmRelInit = function(){
 		this.relFrms(this.selectCnty.value)
 		return
 	}
-	
-	this.frmInit.addEventListener("submit", ev => {
-		ev.preventDefault()
-		this.frmInit.classList.remove("flickr")
-		let data = new FormData(ev.target)
-		this.auth.textContent = "Processing..."
-		fetch(this.relUrl, {method: "POST", body: data})
-		.then(res => {
-			if(!res.ok){
-				throw new Error(`HTTP Error! status: ${res.status}`)
-			}return res.json()
-		}).then(e => {
-			this.auth.textContent = "Authenticate"
-			if(e.error){
-				throw new Error(e.error)
-				return
-			}
-			this.initDiv.style.display = "none"
-			this.ls.setItem("relPwrd", frmInit["pass"].value)
-			this.ls.setItem("relSigma", JSON.stringify(e))
-			this.relFrms(this.selectCnty.value)
-		}).catch(er => {
-			this.auth.textContent = "Try Again!"
-			this.initMsg.innerHTML = `<div class="err">${er}</div>`
-			this.frmInit.classList.add("flickr")
-		})
-	})
+	this.ctudAuthr()
 }
 
 UX.prototype.relReset = function(){
