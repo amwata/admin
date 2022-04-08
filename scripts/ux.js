@@ -376,8 +376,10 @@ UX.prototype.frmRelInit = function(){
 			this.ls.setItem("relSigma", JSON.stringify(e))
 			this.relFrms(this.selectCnty.value)
 		}).catch(er => {
+			this.frmInit.classList.remove("flickr")
 			this.auth.textContent = "Try Again!"
 			this.initMsg.innerHTML = `<div class="err">${er}</div>`
+			this.frmInit.classList.add("flickr")
 		})
 	})
 }
