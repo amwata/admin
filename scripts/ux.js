@@ -358,7 +358,7 @@ UX.prototype.frmRelInit = function(){
 		this.relFrms(this.selectCnty.value)
 		return
 	}
-	this.ctudAuthr()
+	this.crudAuthr()
 }
 
 UX.prototype.relReset = function(){
